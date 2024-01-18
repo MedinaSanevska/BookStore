@@ -13,6 +13,12 @@ public class LibraryService : ILibraryService
         _bookService = bookService;
     }
 
+    public int CheckAuthorCount(int input)
+    {
+        var bookCount = _bookService.GetAll();
+        return bookCount.Count + input;
+    }
+
     public GetAllBookByAuthorResponse GetAllBookByAuthorAfterDate(GetAllBookByAuthorRequest request)
     {
         var result = new GetAllBookByAuthorResponse();
